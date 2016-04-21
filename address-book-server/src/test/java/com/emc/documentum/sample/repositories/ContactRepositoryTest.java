@@ -18,6 +18,9 @@ import com.emc.documentum.sample.TestConfig;
 import com.emc.documentum.sample.domain.Contact;
 import com.emc.documentum.springdata.core.Documentum;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 /**
  * Integration tests for Spring Data Contact Repository
  *
