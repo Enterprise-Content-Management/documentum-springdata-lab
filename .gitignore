@@ -9,7 +9,7 @@
 
 ### Documentum
 **/activityLog*.*
-**/documentum/**
+address-book-server/documentum/
 
 ### Angular/Node/Bower Ignores
 **/node_modules/**
