@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Artifact:Artifact xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Artifact="http://documentum.emc.com/infrastructure/12012007/artifact" xmlns:dclass="http://documentum.emc.com/artifact/12012007/dclass" urn="urn:com.emc.ide.artifact.dclass/contact?artifactURI=file:/C:/src/git/ob1-sc/address-book-dar/Artifacts/Types/contact.type" categoryId="com.emc.ide.artifact.dclass">
+  <dataModel xsi:type="dclass:DClass">
+    <type name="contact">
+      <primaryElement>
+        <attributes attr_name="email" attr_length="255" ID="bl1bDVMG40Y832tXKzWzfD">
+          <attrAnnotations xsi:type="dclass:AttrDDInfo" ignore_constraints="INHERIT" is_searchable="INHERIT" is_required="inherit" read_only="inherit" ignore_immutable="inherit" is_hidden="inherit" not_null="inherit"/>
+          <attrAnnotations xsi:type="dclass:NLSDDInfoSet">
+            <locales xsi:type="dclass:AttrNLSDDInfo" nls_key="en"/>
+          </attrAnnotations>
+          <attr_type xsi:type="dclass:CSDefinedType" values="STRING"/>
+        </attributes>
+        <attributes attr_name="groups" attr_repeating="true" attr_length="255" ID="abyPvnQc4kN996OUemI9f+">
+          <attrAnnotations xsi:type="dclass:AttrDDInfo" ignore_constraints="INHERIT" is_searchable="INHERIT" is_required="inherit" read_only="inherit" ignore_immutable="inherit" is_hidden="inherit" not_null="inherit"/>
+          <attrAnnotations xsi:type="dclass:NLSDDInfoSet">
+            <locales xsi:type="dclass:AttrNLSDDInfo" nls_key="en"/>
+          </attrAnnotations>
+          <attr_type xsi:type="dclass:CSDefinedType" values="STRING"/>
+        </attributes>
+        <attributes attr_name="telephone" attr_length="32" ID="5qbVnGCWQLXbHWdAUuQdaX">
+          <attrAnnotations xsi:type="dclass:AttrDDInfo" ignore_constraints="INHERIT" is_searchable="INHERIT" is_required="inherit" read_only="inherit" ignore_immutable="inherit" is_hidden="inherit" not_null="inherit"/>
+          <attrAnnotations xsi:type="dclass:NLSDDInfoSet">
+            <locales xsi:type="dclass:AttrNLSDDInfo" nls_key="en"/>
+          </attrAnnotations>
+          <attr_type xsi:type="dclass:CSDefinedType" values="STRING"/>
+        </attributes>
+        <typeAnnotations xsi:type="dclass:NLSDDInfoSet">
+          <locales xsi:type="dclass:TypeNLSDDInfo" nls_key="en"/>
+        </typeAnnotations>
+        <typeAnnotations xsi:type="dclass:TypeDDInfo" ignore_constraints="INHERIT" is_searchable="INHERIT"/>
+      </primaryElement>
+      <super_name href="urn:com.emc.ide.artifact.dclass/dm_document?name=dm_document#//@dataModel"/>
+    </type>
+  </dataModel>
+  <viewModel xsi:type="Artifact:DefaultArtifactViewModel"/>
+</Artifact:Artifact>

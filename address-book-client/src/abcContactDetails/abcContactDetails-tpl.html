@@ -1,0 +1,72 @@
+<div class="abc-contact-details">
+    <div class="c-d-left">
+        <div class="c-d-icon">
+            <span class="c-d-noimage" ng-if="data.contact.photo === undefined"><i class="fa fa-user"></i></span>
+            <img class="c-d-image" ng-if="data.contact.photo !== undefined" ng-src="{{data.contact.photo}}">
+        </div>
+        <div class="c-d-name">{{data.contact.name}}</div>
+        <div class="c-d-upload" ng-if="data.inEdit === false">
+            <div class="c-u-wrapper">
+                Upload photo
+                <span class="c-u-btn"><i class="fa fa-upload"></i></span>
+                <input type="file" class="c-u-upload" abc-file-changed="onImageSelected" accept=".png">
+            </div>
+        </div>
+    </div>
+    <div class="c-d-right">
+        <div class="c-d-details" ng-if="data.inEdit === false">
+            <div class="c-d-title">
+                <span class="c-d-prompt">Contact details</span>
+                <span class="c-d-tools">
+                    <span ng-click="startEditing()"><i class="fa fa-pencil"></i></span>
+                    <span class="danger" ng-click="deleteContact()"><i class="fa fa-trash"></i></span>
+                </span>
+            </div>
+            <div class="c-d-entry" ng-if="data.contact.email">
+                <span class="fa fa-envelope"></span> {{data.contact.email}}
+            </div>
+            <div class="c-d-entry" ng-if="data.contact.telephone">
+                <span class="fa fa-phone"></span> {{data.contact.telephone}}
+            </div>
+        </div>
+        <div class="c-d-form" ng-if="data.inEdit === true">
+            <div class="c-f-title">
+                <span class="c-f-prompt">Edit contact</span>
+                <span class="c-f-tools">
+                    <button class="btn btn-sm btn-default" ng-click="stopEditing()" ng-disabled="data.disabled == true">Cancel</button>
+                    <button class="btn btn-sm btn-primary" ng-click="saveEdits()"
+                            ng-disabled="contactForm.$valid !== true || (contactForm.$pristine === true && data.isNew === false) || data.disabled === true">Save</button>
+                </span>
+            </div>
+            <form class="c-f-form form-horizontal" name="contactForm">
+                <div class="form-group" ng-class="{'has-error': contactForm.name.$valid === false}">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" ng-model="data.editCopy.name" placeholder="Name - required" required  ng-disabled="data.disabled == true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="email" class="form-control" ng-model="data.editCopy.email" placeholder="Email address"  ng-disabled="data.disabled == true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="telephone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="telephone" class="form-control" ng-model="data.editCopy.telephone" placeholder="Telephone number"  ng-disabled="data.disabled == true">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="c-d-groups" uib-dropdown ng-hide="data.isNew === true">
+        <span class="c-g-none" uib-dropdown-toggle ng-if="data.contact.groups.length === 0"><i class="fa fa-group"></i> Add to groups</span>
+        <span class="c-g-in" uib-dropdown-toggle ng-if="data.contact.groups.length > 0"><i class="fa fa-group"></i> {{getGroupsList()}}</span>
+        <ul uib-dropdown-menu>
+            <li class="c-g-group" ng-repeat="group in data.groups" ng-class="{used: isInGroup(group)}" ng-click="toggleGroup(group)">
+                <a href><i class="fa fa-check"></i> {{group}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

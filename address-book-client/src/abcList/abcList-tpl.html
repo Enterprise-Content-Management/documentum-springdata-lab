@@ -1,0 +1,58 @@
+<div class="abc-list">
+    <div class="l-nav">
+        <div class="l-header">
+            <div class="l-h-image"><span><i class="fa fa-lg fa-user"></i></span></div>
+            <div class="l-h-name">John Another</div>
+        </div>
+        <div class="l-filter" ng-class="{active: data.filter == 'all'}" ng-click="showAll()">
+            All contacts
+        </div>
+        <div class="l-divider">
+            Groups
+        </div>
+        <div class="l-filter" ng-repeat="group in data.groups" ng-class="{active: data.filter == group}" ng-click="showGroup(group)">
+            {{group}}
+        </div>
+    </div>
+    <div class="l-listing" ng-if="data.state != 'getting'">
+        <div class="l-prompt" ng-if="data.state == 'got' && data.filter == 'all'">
+            All contacts ({{data.contacts.length}})
+        </div>
+        <div class="l-prompt" ng-if="data.state == 'got' && data.filter != 'all'">
+            {{data.filter}} ({{data.contacts.length}})
+        </div>
+        <div class="l-prompt" ng-if="data.state == 'found'">
+            Searched for '{{data.filter}}' ({{data.contacts.length}})
+        </div>
+        <div class="l-none" ng-if="data.state == 'got' && data.contacts.length === 0 && data.filter != 'all'">
+            There are no contacts in this group yet - use the "Add person" button or search for someone to add
+        </div>
+        <div class="l-none" ng-if="data.state == 'found' && data.contacts.length === 0">
+            No results for '{{data.filter}}' in your contacts
+        </div>
+        <div class="l-none" ng-if="data.state == 'got' && data.contacts.length === 0 && data.filter == 'all'">
+            You don't have any contacts yet - use the "Add person" to add some
+        </div>
+        <div class="l-list-wrapper" ng-if="data.state != 'getting' && data.contacts.length > 0">
+            <div class="l-contact" ng-repeat="contact in data.contacts" ng-click="showContact(contact)">
+                <div class="l-c-image">
+                    <span class="l-c-noimage" ng-if="contact.photo === undefined"><i class="fa fa-user"></i></span>
+                    <span class="l-c-img" ng-if="contact.photo !== undefined">
+                        <img  ng-src="{{contact.photo}}">
+                    </span>
+                </div>
+                <div class="l-c-name">{{contact.name}}</div>
+                <div class="l-c-email">{{contact.email}}</div>
+                <div class="l-c-tel">{{contact.telephone}}</div>
+                <div class="l-c-filler">&nbsp;</div>
+                <div class="l-c-tools">
+                    <span ng-click="showContact(contact, true); $event.stopPropagation()"><i class="fa fa-pencil"></i></span>
+                    <span class="danger" ng-click="deleteContact(contact); $event.stopPropagation()"><i class="fa fa-trash"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-add">
+        <span ng-click="addContact()"><i class="fa fa-user-plus"></i></span>
+    </div>
+</div>

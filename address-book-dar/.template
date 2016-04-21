@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ASCII"?>
+<projecttemplate:Template xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:projecttemplate="http:///com.emc.ide.model.ecore/projecttemplate" description="Default Project Template">
+  <categoryMap>
+    <categories key="com.emc.ide.artifact.bpm.process">
+      <value categoryId="com.emc.ide.artifact.bpm.process" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newbpm"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.daspect">
+      <value categoryId="com.emc.ide.artifact.daspect" sourceRepositoryLocation="sourceRepoTypes" projectLocation="Types" targetRepositoryLocation="targetRepoTypes" fileName="newaspecttype"/>
+    </categories>
+    <categories key="com.emc.ide.userparameter">
+      <value categoryId="com.emc.ide.userparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="MyUserParameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.relationtype">
+      <value categoryId="com.emc.ide.artifact.relationtype" sourceRepositoryLocation="sourceRepoRelation Types" projectLocation="Relation Types" targetRepositoryLocation="targetRepoRelation Types" fileName="newrelationtype"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.dclass">
+      <value categoryId="com.emc.ide.artifact.dclass" sourceRepositoryLocation="sourceRepoTypes" projectLocation="Types" targetRepositoryLocation="targetRepoTypes" fileName="newtype"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueue">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueue" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueue"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.acl">
+      <value categoryId="com.emc.ide.artifact.acl" sourceRepositoryLocation="sourceRepoPermission Sets" projectLocation="Permission Sets" targetRepositoryLocation="targetRepoPermission Sets" fileName="newacl"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.foldersubtype">
+      <value categoryId="com.emc.ide.artifact.foldersubtype" sourceRepositoryLocation="sourceRepoFolders" projectLocation="Folders" targetRepositoryLocation="targetRepoFolders" fileName="newfolder"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.aliasset">
+      <value categoryId="com.emc.ide.artifact.aliasset" sourceRepositoryLocation="sourceRepoAlias Sets" projectLocation="Alias Sets" targetRepositoryLocation="targetRepoAlias Sets" fileName="newaliasset"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueuecategory">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueuecategory" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueuecategory"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.moduledef">
+      <value categoryId="com.emc.ide.artifact.moduledef" sourceRepositoryLocation="sourceRepoModules" projectLocation="Modules" targetRepositoryLocation="targetRepoModules" fileName="newmodule"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueueuserprofile">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueueuserprofile" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueueuserprofile"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.aspectmoduledef">
+      <value categoryId="com.emc.ide.artifact.aspectmoduledef" sourceRepositoryLocation="sourceRepoModules" projectLocation="Modules" targetRepositoryLocation="targetRepoModules" fileName="newaspectmodule"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueueuserskill">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueueuserskill" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueueuserskill"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.xmlapplication">
+      <value categoryId="com.emc.ide.artifact.xmlapplication" sourceRepositoryLocation="sourceRepoXML Applications" projectLocation="XML Applications" targetRepositoryLocation="targetRepoXML Applications" fileName="newxmlapp"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.calendar">
+      <value categoryId="com.emc.ide.artifact.bpm.calendar" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newcalendar"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.jardef.implementationJar">
+      <value categoryId="com.emc.ide.artifact.jardef.implementationJar" sourceRepositoryLocation="sourceRepoJAR Definitions" projectLocation="JAR Definitions" targetRepositoryLocation="targetRepoJAR Definitions" fileName="newjardef"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueuedocprofile">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueuedocprofile" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueuedocprofile"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bam.report">
+      <value categoryId="com.emc.ide.artifact.bam.report" sourceRepositoryLocation="sourceRepoBAM Reports" projectLocation="BAM Reports" targetRepositoryLocation="targetRepoBAM Reports" fileName="newBamReport"/>
+    </categories>
+    <categories key="com.emc.ide.folderparameter">
+      <value categoryId="com.emc.ide.folderparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="MyFolderParameter"/>
+    </categories>
+    <categories key="com.emc.ide.principalparameter">
+      <value categoryId="com.emc.ide.principalparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="MyPrincipalParameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.jardef.interfaceJar">
+      <value categoryId="com.emc.ide.artifact.jardef.interfaceJar" sourceRepositoryLocation="sourceRepoJAR Definitions" projectLocation="JAR Definitions" targetRepositoryLocation="targetRepoJAR Definitions" fileName="newjardef"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.processContainer">
+      <value categoryId="com.emc.ide.artifact.bpm.processContainer" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newbpm"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.sysobjectsubtype">
+      <value categoryId="com.emc.ide.artifact.sysobjectsubtype" sourceRepositoryLocation="sourceRepoSysObjects" projectLocation="SysObjects" targetRepositoryLocation="targetRepoSysObjects" fileName="newsysobject"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.xmlconfig">
+      <value categoryId="com.emc.ide.artifact.xmlconfig" sourceRepositoryLocation="sourceRepoXML Applications" projectLocation="XML Applications" targetRepositoryLocation="targetRepoXML Applications" fileName="newxmlconfig"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bam.config">
+      <value categoryId="com.emc.ide.artifact.bam.config" sourceRepositoryLocation="sourceRepoBamConfiguration" projectLocation="BamConfiguration" targetRepositoryLocation="targetRepoBamConfiguration" fileName="BamConfiguration"/>
+    </categories>
+    <categories key="com.emc.ide.installparameter">
+      <value categoryId="com.emc.ide.installparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="InstallParameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.jardef.jardef">
+      <value categoryId="com.emc.ide.artifact.jardef.jardef" sourceRepositoryLocation="sourceRepoJAR Definitions" projectLocation="JAR Definitions" targetRepositoryLocation="targetRepoJAR Definitions" fileName="newjardef"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.smartcontainer">
+      <value categoryId="com.emc.ide.artifact.smartcontainer" sourceRepositoryLocation="sourceRepoSmart Containers" projectLocation="Smart Containers" targetRepositoryLocation="targetRepoSmart Containers" fileName="newsmartcontainer"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.jardef.javalibrary">
+      <value categoryId="com.emc.ide.artifact.jardef.javalibrary" sourceRepositoryLocation="sourceRepoJava Libraries" projectLocation="Java Libraries" targetRepositoryLocation="targetRepoJava Libraries" fileName="newjavalibrary"/>
+    </categories>
+    <categories key="com.emc.ide.groupparameter">
+      <value categoryId="com.emc.ide.groupparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="MyGroupParameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueuepolicy">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueuepolicy" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueuepolicy"/>
+    </categories>
+    <categories key="com.emc.ide.aclparameter">
+      <value categoryId="com.emc.ide.aclparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="MyACLParameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.formtemplate">
+      <value categoryId="com.emc.ide.artifact.formtemplate" sourceRepositoryLocation="sourceRepoForms" projectLocation="Forms" targetRepositoryLocation="targetRepoForms" fileName="newformtemplate"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.forminstance">
+      <value categoryId="com.emc.ide.artifact.forminstance" sourceRepositoryLocation="sourceRepoForms" projectLocation="Forms" targetRepositoryLocation="targetRepoForms" fileName="newFormInstance"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.workqueueskillinfo">
+      <value categoryId="com.emc.ide.artifact.bpm.workqueueskillinfo" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newworkqueueskillinfo"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.group">
+      <value categoryId="com.emc.ide.artifact.group" sourceRepositoryLocation="sourceRepoGroups" projectLocation="Groups" targetRepositoryLocation="targetRepoGroups" fileName="newgroup"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.dardef">
+      <value categoryId="com.emc.ide.artifact.dardef" sourceRepositoryLocation="sourceRepo../dar" projectLocation="../dar" targetRepositoryLocation="targetRepo../dar" fileName="newdardef"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.activity">
+      <value categoryId="com.emc.ide.artifact.bpm.activity" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newactivity"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.job">
+      <value categoryId="com.emc.ide.artifact.job" sourceRepositoryLocation="sourceRepoJobs" projectLocation="Jobs" targetRepositoryLocation="targetRepoJobs" fileName="newjob"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.relation">
+      <value categoryId="com.emc.ide.artifact.relation" sourceRepositoryLocation="sourceRepoRelation" projectLocation="Relation" targetRepositoryLocation="targetRepoRelation" fileName="newrelation"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.lwdclass">
+      <value categoryId="com.emc.ide.artifact.lwdclass" sourceRepositoryLocation="sourceRepoTypes" projectLocation="Types" targetRepositoryLocation="targetRepoTypes" fileName="newlwtype"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.activityTemplateContainer">
+      <value categoryId="com.emc.ide.artifact.bpm.activityTemplateContainer" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newbpm"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.statetype">
+      <value categoryId="com.emc.ide.artifact.statetype" sourceRepositoryLocation="sourceRepoLifecycles" projectLocation="Lifecycles" targetRepositoryLocation="targetRepoLifecycles" fileName="newstatetype"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.formadaptorconfig">
+      <value categoryId="com.emc.ide.artifact.formadaptorconfig" sourceRepositoryLocation="sourceRepoForms" projectLocation="Forms" targetRepositoryLocation="targetRepoForms" fileName="newformadaptorconfig"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.role">
+      <value categoryId="com.emc.ide.artifact.role" sourceRepositoryLocation="sourceRepoRoles" projectLocation="Roles" targetRepositoryLocation="targetRepoRoles" fileName="newrole"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.method">
+      <value categoryId="com.emc.ide.artifact.method" sourceRepositoryLocation="sourceRepoMethods" projectLocation="Methods" targetRepositoryLocation="targetRepoMethods" fileName="newmethod"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.procedure">
+      <value categoryId="com.emc.ide.artifact.procedure" sourceRepositoryLocation="sourceRepoProcedures" projectLocation="Procedures" targetRepositoryLocation="targetRepoProcedures" fileName="newprocedure"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.lifecycle">
+      <value categoryId="com.emc.ide.artifact.lifecycle" sourceRepositoryLocation="sourceRepoLifecycles" projectLocation="Lifecycles" targetRepositoryLocation="targetRepoLifecycles" fileName="newlifecycle"/>
+    </categories>
+    <categories key="com.emc.ide.valueparameter">
+      <value categoryId="com.emc.ide.valueparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="myvalueparameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.format">
+      <value categoryId="com.emc.ide.artifact.format" sourceRepositoryLocation="sourceRepoFormats" projectLocation="Formats" targetRepositoryLocation="targetRepoFormats" fileName="newformat"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.formschema">
+      <value categoryId="com.emc.ide.artifact.formschema" sourceRepositoryLocation="sourceRepoForms" projectLocation="Forms" targetRepositoryLocation="targetRepoForms" fileName="newSchema"/>
+    </categories>
+    <categories key="com.emc.ide.storageparameter">
+      <value categoryId="com.emc.ide.storageparameter" sourceRepositoryLocation="sourceRepoInstallation Parameters" projectLocation="Installation Parameters" targetRepositoryLocation="targetRepoInstallation Parameters" fileName="MyStorageParameter"/>
+    </categories>
+    <categories key="com.emc.ide.artifact.bpm.sdt">
+      <value categoryId="com.emc.ide.artifact.bpm.sdt" sourceRepositoryLocation="sourceRepoBPM" projectLocation="BPM" targetRepositoryLocation="targetRepoBPM" fileName="newsdtinfo"/>
+    </categories>
+  </categoryMap>
+</projecttemplate:Template>

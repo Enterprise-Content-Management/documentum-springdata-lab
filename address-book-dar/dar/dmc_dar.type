@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Artifact:Artifact xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Artifact="http://documentum.emc.com/infrastructure/12012007/artifact" xmlns:dclass="http://documentum.emc.com/artifact/12012007/dclass" xmlns:installparameter="installparameter" urn="urn:com.emc.ide.artifact.dclass/dmc_dar?artifactURI=platform:/resource/DFS2/inst/dclass/dmc_dar.type" categoryId="com.emc.ide.artifact.dclass">
+  <dataModel xsi:type="dclass:DClass">
+    <type name="dmc_dar">
+      <primaryElement>
+		<attributes attr_name="project_version_major" attr_length="10">
+          <attrAnnotations xsi:type="dclass:AttrDDInfo">
+            <cond_value_assist/>
+            <default_value expressionText="1">
+              <objectType xsi:type="dclass:DClass" href="urn:com.emc.ide.artifact.dclass/dm_expression?name=dm_expression#//@dataModel"/>
+            </default_value>
+          </attrAnnotations>
+          <attrAnnotations xsi:type="dclass:NLSDDInfoSet">
+            <locales xsi:type="dclass:AttrNLSDDInfo" label_text="Project Major Version" help_text="" comment_text="" nls_key="en"/>
+          </attrAnnotations>
+          <attr_type xsi:type="dclass:CSDefinedType" values="INTEGER"/>
+        </attributes>
+        <attributes attr_name="project_version_minor" attr_length="10">
+          <attrAnnotations xsi:type="dclass:AttrDDInfo">
+            <cond_value_assist/>
+            <default_value expressionText="0">
+              <objectType xsi:type="dclass:DClass" href="urn:com.emc.ide.artifact.dclass/dm_expression?name=dm_expression#//@dataModel"/>
+            </default_value>
+          </attrAnnotations>
+          <attrAnnotations xsi:type="dclass:NLSDDInfoSet">
+            <locales xsi:type="dclass:AttrNLSDDInfo" label_text="Project Minor Version" help_text="" comment_text="" nls_key="en"/>
+          </attrAnnotations>
+          <attr_type xsi:type="dclass:CSDefinedType" values="INTEGER"/>
+        </attributes>        
+        <attributes attr_name="manifest_version" attr_length="32">
+          <attrAnnotations xsi:type="dclass:AttrDDInfo">
+            <cond_value_assist/>
+          </attrAnnotations>
+          <attrAnnotations xsi:type="dclass:NLSDDInfoSet">
+            <locales xsi:type="dclass:AttrNLSDDInfo" label_text="" help_text="" comment_text="" nls_key="en"/>
+          </attrAnnotations>
+          <attr_type xsi:type="dclass:CSDefinedType" values="STRING"/>
+        </attributes>
+        <typeAnnotations xsi:type="dclass:NLSDDInfoSet">
+          <locales xsi:type="dclass:TypeNLSDDInfo" label_text="" help_text="" comment_text="" nls_key="en"/>
+        </typeAnnotations>
+        <typeAnnotations xsi:type="dclass:TypeDDInfo"/>
+        <domain>
+          <locale_info nls_key="en"/>
+          <locale_info nls_key="en">
+            <localeInfo xsi:type="dclass:TypeNLSDDInfo" label_text="" help_text="" comment_text="" nls_key="en"/>
+          </locale_info>
+        </domain>
+      </primaryElement>
+      <super_name href="urn:com.emc.ide.artifact.dclass/dm_sysobject?name=dm_sysobject#//@dataModel"/>
+    </type>
+  </dataModel>
+  <viewModel xsi:type="Artifact:DefaultArtifactViewModel"/>
+</Artifact:Artifact>

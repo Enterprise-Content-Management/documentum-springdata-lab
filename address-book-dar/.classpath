@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="/DocumentumCoreProject"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="com.emc.ide.external.dfs.DFS_CONTAINER"/>
+	<classpathentry kind="src" output="Web Services/bin/classes" path="Web Services/src"/>
+	<classpathentry kind="src" output="Web Services/bin/classes" path="Web Services/bin/gen-src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

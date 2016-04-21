@@ -1,0 +1,10 @@
+<div class="abc-create-contact">
+    <form name="newContact">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter a name..." ng-model="data.name" name="name" required>
+            <span class="input-group-btn">
+                <button class="btn btn-primary" ng-disabled="newContact.name.$valid !== true" ng-click="create()">Create</button>
+            </span>
+        </div>
+    </form>
+</div>

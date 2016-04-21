@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Artifact:Artifact xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Artifact="http://documentum.emc.com/infrastructure/12012007/artifact" xmlns:dardef="http://documentum.emc.com/infrastructure/12012007/dardef" xmlns:dclass="http://documentum.emc.com/artifact/12012007/dclass" xmlns:installparameter="installparameter" urn="urn:com.emc.ide.artifact.dardef/default?artifactURI=file:/C:/Workspaces/composer/address-book-dar/dar/default.dardef" categoryId="com.emc.ide.artifact.dardef">
+  <dataModel xsi:type="dardef:DarDef" objectName="address-book-dar" contentType="jar" sourceDir="bin" name="address-book-dar">
+    <objectType href="urn:com.emc.ide.artifact.dclass/dmc_dar?artifactURI=platform:/resource/DFS2/inst/dclass/dmc_dar.type#//@dataModel"/>
+    <version/>
+    <artifacts xsi:type="dclass:DClass" href="urn:com.emc.ide.artifact.dclass/contact?artifactURI=file:/C:/src/git/ob1-sc/address-book-dar/Artifacts/Types/contact.type#//@dataModel"/>
+    <artifacts xsi:type="installparameter:FolderParameter" href="urn:com.emc.ide.folderparameter/Dar+Install+Folder?artifactURI=file:/C:/Workspaces/composer/address-book-dar/Artifacts/Installation%20Parameters/darinstallfolder.parameter#//@dataModel"/>
+    <artifacts xsi:type="dclass:DClass" href="urn:com.emc.ide.artifact.dclass/dmc_dar?artifactURI=platform:/resource/DFS2/inst/dclass/dmc_dar.type#//@dataModel"/>
+    <artifacts xsi:type="dardef:DarDef" href="urn:com.emc.ide.artifact.dardef/default?artifactURI=file:/C:/Workspaces/composer/address-book-dar/dar/default.dardef#//@dataModel"/>
+    <darInstallOptionsSet>
+      <location xsi:type="installparameter:FolderParameter" href="urn:com.emc.ide.folderparameter/Dar+Install+Folder?artifactURI=file:/C:/Workspaces/composer/address-book-dar/Artifacts/Installation%20Parameters/darinstallfolder.parameter#//@dataModel"/>
+      <upgradeOption xsi:type="dardef:UpgradeOption"/>
+    </darInstallOptionsSet>
+  </dataModel>
+</Artifact:Artifact>

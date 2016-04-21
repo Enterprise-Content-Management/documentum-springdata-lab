@@ -1,0 +1,193 @@
+.abc-list {
+  margin-top: 60px;
+  .l-nav {
+    position: fixed;
+    width: 250px;
+    background-color: #fff;
+    top: 60px;
+    left: 20px;
+    box-shadow: 0px 0px 3px 0px @gray-light;
+    .l-header {
+      display: table;
+      height: 70px;
+      width: 100%;
+      border-bottom: 1px solid @gray-light;
+      .l-h-image {
+        display: table-cell;
+        vertical-align: middle;
+        min-width: 58px;
+        max-width: 58px;
+        padding-left: 10px;
+        span {
+          background-color: @gray-lighter;
+          border-radius: 100%;
+          width: 38px;
+          height: 38px;
+          text-align: center;
+          display: inline-block;
+          .fa {
+            color: #fff;
+            font-size: 20px;
+            display: inline-block;
+            line-height: 38px;
+          }
+        }
+      }
+      .l-h-name {
+        display: table-cell;
+        width: 99%;
+        vertical-align: middle;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+    .l-filter {
+      padding: 8px 12px;
+      .transition(all .35s ease);
+      cursor: pointer;
+      border-left: 2px solid #fff;
+      border-bottom: 1px solid @gray-lighter;
+      color: @gray-light;
+      &:hover {
+        background-color: lighten(@gray-lighter, 2%);
+        border-left-color: lighten(@gray-lighter, 2%);
+      }
+      &.active {
+        background-color: lighten(@gray-lighter, 1%);
+        color: @text-color;
+        border-left-color: @brand-primary;
+      }
+    }
+    .l-divider {
+      padding: 8px 12px;
+      border-left: 2px solid #fff;
+      border-bottom: 1px solid @gray-light;
+    }
+  }
+  .l-listing {
+    margin-left: 300px;
+    .l-none {
+      color: @gray-light;
+      text-align: center;
+      padding-top: 30px;
+    }
+    .l-list-wrapper {
+      background-color: #fff;
+      margin-top: 16px;
+      box-shadow: 0px 0px 3px 0px @gray-light;
+      margin-right: 80px;
+      .l-contact {
+        display: table;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        .transition(all .35s ease);
+        border-bottom: 1px solid @gray-lighter;
+        &:hover {
+          background-color: lighten(@gray-lighter, 5%);
+          .l-c-tools {
+            opacity: 1;
+          }
+        }
+        .l-c-cell(@width) {
+          display: table-cell;
+          vertical-align: middle;
+          min-width: @width;
+          max-width: @width;
+        }
+        .l-c-image {
+          .l-c-cell(50px);
+          padding-left: 10px;
+          .l-c-noimage {
+            display: inline-block;
+            background-color: @gray-lighter;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            border-radius: 100%;
+            .fa {
+              color: #fff;
+              font-size: 20px;
+              line-height: 32px;
+            }
+          }
+          .l-c-img {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            img {
+              border: none;
+              outline: none;
+              border-radius: 100%;
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+        .l-c-name {
+          .l-c-cell(180px);
+          font-weight: bold;
+        }
+        .l-c-email {
+          .l-c-cell(300px);
+        }
+        .l-c-tel {
+          .l-c-cell(120px);
+        }
+        .l-c-tools {
+          .l-c-cell(100px;);
+          .transition(opacity .35s ease);
+          opacity: 0;
+          text-align: right;
+          padding-right: 12px;
+          span {
+            .transition(color .35s ease);
+            font-size: 18px;
+            display: inline-block;
+            cursor: pointer;
+            margin-left: 12px;
+            color: @brand-primary;
+            &:hover {
+              color: darken(@brand-primary, 10%);
+            }
+            &.danger {
+              color: @brand-danger;
+              &:hover {
+                color: darken(@brand-danger, 10%);
+              }
+            }
+          }
+        }
+        .l-c-filler {
+          display: table-cell;
+          width: 90%;
+        }
+      }
+    }
+  }
+  .l-add {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    span {
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+      border-radius: 100%;
+      text-align: center;
+      color: #fff;
+      background-color: darken(@brand-danger, 10%);
+      box-shadow: 3px 3px 10px 2px @gray-light;
+      cursor: pointer;
+      .transition(all .35s ease);
+      &:hover {
+        background-color: @brand-danger;
+      }
+      .fa {
+        display: inline-block;
+        line-height: 56px;
+        font-size: 20px;
+      }
+    }
+  }
+}

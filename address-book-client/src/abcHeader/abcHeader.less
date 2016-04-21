@@ -1,0 +1,90 @@
+.abc-header {
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: @brand-primary;
+  color: #fff;
+  z-index: 100;
+  .h-wrapper {
+    display: table;
+    width: 100%;
+    height: 40px;
+    .h-title, .h-search, .h-filler {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .h-title {
+      min-width: 150px;
+      max-width: 150px;
+      padding-left: 20px;
+      font-size: 16px;
+    }
+    .h-search {
+      min-width: 300px;
+      max-width: 300px;
+      .dropdown-menu {
+        color: @text-color;
+        min-width: 300px;
+        padding: 0 0 5px 0;
+        .h-s-prompt {
+          padding: 8px;
+          font-size: @font-size-small;
+          cursor: pointer;
+          background-color: @gray-lighter;
+        }
+        .h-s-result {
+          display: table;
+          height: 60px;
+          width: 100%;
+          .transition(all .35s ease);
+          cursor: pointer;
+          &:hover {
+            background-color: lighten(@gray-lighter, 5%);
+          }
+          .h-s-cell() {
+            display: table-cell;
+            vertical-align: middle;
+          }
+          .h-s-image {
+            .h-s-cell;
+            min-width: 60px;
+            max-width: 60px;
+            padding-left: 10px;
+            .h-s-noimage {
+              display: inline-block;
+              background-color: @gray-lighter;
+              width: 44px;
+              height: 44px;
+              text-align: center;
+              border-radius: 100%;
+              .fa {
+                color: #fff;
+                font-size: 24px;
+                line-height: 44px;
+              }
+            }
+            .h-s-img {
+              display: block;
+              border: none;
+              outline: none;
+              border-radius: 100%;
+              width: 44px;
+              height: 44px;
+              max-width: 44px;
+            }
+          }
+          .h-s-name {
+            .h-s-cell;
+            width: 99%;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .h-filler {
+      width: 90%;
+    }
+  }
+}
