@@ -1,0 +1,21 @@
+### IntelliJ Ignores
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/.tmp/
+**/.DS_Store
+**target/
+
+### Documentum
+**/activityLog*.*
+**/documentum/**
+
+### Angular/Node/Bower Ignores
+**/node_modules/**
+**/bower_modules/**
+**/public/**
+
+### Composer Ignores
+**/bin/
+**/bin-dar/
