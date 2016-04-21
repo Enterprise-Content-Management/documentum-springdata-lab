@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.emc.documentum.springdata.repository.config.EnableDctmRepositories;
+
 /**
  * Spring Boot Address Book Contacts Web Application Server
  *
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.emc.documentum.springdata", "com.emc.documentum.sample"})
+@EnableDctmRepositories
 @EnableAutoConfiguration
 @EnableWebMvc
 public class Application {
