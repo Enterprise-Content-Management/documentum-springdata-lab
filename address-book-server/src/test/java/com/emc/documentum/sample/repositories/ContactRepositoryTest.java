@@ -1,35 +1,22 @@
 package com.emc.documentum.sample.repositories;
 
-import com.emc.documentum.sample.TestConfig;
-import com.emc.documentum.sample.domain.Contact;
-import com.emc.documentum.springdata.core.Documentum;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.lang.RandomStringUtils;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.data.authentication.UserCredentials;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.FileSystemUtils;
-import org.springframework.util.StringUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import com.emc.documentum.sample.TestConfig;
+import com.emc.documentum.sample.domain.Contact;
+import com.emc.documentum.springdata.core.Documentum;
 
 /**
  * Integration tests for Spring Data Contact Repository
@@ -54,9 +41,6 @@ public class ContactRepositoryTest {
 
     @Autowired
     private Documentum documentum;
-
-//    @Autowired
-//    private ContactRepository contactRepository;
 
     @Value("classpath:/test-contents/contact.png")
     private Resource contactPicture;
