@@ -5,7 +5,7 @@
 **/*.iws
 **/.tmp/
 **/.DS_Store
-**target/
+**/target/
 
 ### Documentum
 **/activityLog*.*
