@@ -23,4 +23,13 @@ public interface ContactRepository extends DctmRepositoryWithContent<Contact, St
     @Override
     @Query("select r_object_id, object_name, email, telephone, groups, r_content_size from contact")
     public Iterable<Contact> findAll();	
+    
+    /**
+     * Find all contacts where the name contains the given value
+     *
+     * @param value The value to use when searching
+     * @return query results
+     */
+    @Query("select r_object_id, object_name, email, telephone, groups, r_content_size from contact where object_name like \'%%%s%%\'")
+    public Iterable<Contact> findByNameContaining(String value);
 }

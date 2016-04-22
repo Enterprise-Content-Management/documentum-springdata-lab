@@ -86,7 +86,17 @@ public class ContactController {
     public Iterable<Contact> getAllContacts(@RequestParam(value = "name", required = false) final String name,
                                             @RequestParam(value = "group", required = false) final String group) throws Exception {
 
-        Iterable<Contact> contacts = contactRepository.findAll();
+        Iterable<Contact> contacts = null;
+        
+        /*
+         * if the name URI param is supplied then only get contacts where the name contains the
+         * value in the URI param
+         */
+        if(StringUtils.hasText(name)) {
+            contacts = contactRepository.findByNameContaining(name);
+        } else {
+            contacts = contactRepository.findAll();
+        }
 
         return contacts;
     }

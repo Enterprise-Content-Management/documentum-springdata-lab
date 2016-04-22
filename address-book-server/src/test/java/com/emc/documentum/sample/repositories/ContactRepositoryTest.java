@@ -281,48 +281,48 @@ public class ContactRepositoryTest {
     /**
      * Test to find a contact by part of its name
      */
-//    @Test
-//    public void findContactByNameContaining() {
-//
-//        Contact contact = createTestContact();
-//        Contact createdContact = null;
-//
-//        try {
-//
-//            // create a test contact
-//            createdContact = contactRepository.save(contact);
-//
-//            // check the contact was created
-//            assertThat(createdContact, is(notNullValue()));
-//
-//            String nameSubstring = createdContact.getName().substring(4,176);
-//
-//            // try and find the new contact using the name
-//            Iterable<Contact> foundContacts = contactRepository.findByNameContaining(nameSubstring);
-//
-//            // check at least one contact was found
-//            assertThat(foundContacts, is(notNullValue()));
-//
-//            boolean testContactWasFound = false;
-//
-//            // iterate through the contacts
-//            for (Contact foundContact : foundContacts) {
-//
-//                // check if the test contact was found
-//                if(foundContact.getName().contains(nameSubstring)) {
-//                    testContactWasFound = true;
-//                    break;
-//                }
-//            }
-//
-//            assertThat(testContactWasFound, is(true));
-//
-//        } finally {
-//
-//            // clean up the contact
-//            contactRepository.delete(createdContact);
-//        }
-//    }
+    @Test
+    public void findContactByNameContaining() {
+
+        Contact contact = createTestContact();
+        Contact createdContact = null;
+
+        try {
+
+            // create a test contact
+            createdContact = contactRepository.save(contact);
+
+            // check the contact was created
+            assertThat(createdContact, is(notNullValue()));
+
+            String nameSubstring = createdContact.getName().substring(4,176);
+
+            // try and find the new contact using the name
+            Iterable<Contact> foundContacts = contactRepository.findByNameContaining(nameSubstring);
+
+            // check at least one contact was found
+            assertThat(foundContacts, is(notNullValue()));
+
+            boolean testContactWasFound = false;
+
+            // iterate through the contacts
+            for (Contact foundContact : foundContacts) {
+
+                // check if the test contact was found
+                if(foundContact.getName().contains(nameSubstring)) {
+                    testContactWasFound = true;
+                    break;
+                }
+            }
+
+            assertThat(testContactWasFound, is(true));
+
+        } finally {
+
+            // clean up the contact
+            contactRepository.delete(createdContact);
+        }
+    }
 
     /**
      * Test to find a contact where it contains a given group
