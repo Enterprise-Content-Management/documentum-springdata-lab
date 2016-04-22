@@ -94,7 +94,13 @@ public class ContactController {
     @ResponseStatus(HttpStatus.CREATED)
     public Contact createContact(@RequestBody @Valid final Contact contact) throws Exception {
 
-    	return null;
+        // make sure no ID is set so that new object is created
+        contact.setId(null);
+
+        // save the new contact
+        contactRepository.save(contact);
+
+        return contact;
     }
 
     /**
@@ -108,7 +114,8 @@ public class ContactController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteContact(@PathVariable String id) throws Exception {
 
-        
+    	// delete the contact
+        contactRepository.delete(id);
     }
 
     /**
@@ -124,7 +131,11 @@ public class ContactController {
     @ResponseStatus(HttpStatus.OK)
     public Contact updateContact(@PathVariable String id, @RequestBody @Valid final Contact contact) throws Exception {
 
-    	return null;
+    	// ensure the contact ID is correctly set
+        contact.setId(id);
+
+        // update the contact
+        return contactRepository.save(contact);
     }
 
     /**
