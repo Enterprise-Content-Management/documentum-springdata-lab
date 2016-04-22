@@ -371,53 +371,53 @@ public class ContactRepositoryTest {
     /**
      * Test to set and retrieve contact picture
      */
-//    @Test
-//    public void setAndRetrieveContactPicture() throws Exception {
-//
-//        Contact contact = createTestContact();
-//        Contact createdContact = null;
-//        Path tempDir = null;
-//
-//        try {
-//
-//            // create a test contact
-//            createdContact = contactRepository.save(contact);
-//
-//            // check the contact was created
-//            assertThat(createdContact, is(notNullValue()));
-//
-//            // get the file extension
-//            String fileExtension = StringUtils.getFilenameExtension(contactPicture.getFilename());
-//
-//            // set the contact picture
-//            contactRepository.setContent(createdContact, fileExtension, contactPicture.getURL().getPath());
-//
-//            // create a temp dir to hold the picture
-//            tempDir = Files.createTempDirectory(null);
-//
-//            // create a temp file name
-//            String tempFileName = tempDir.toString() + File.separator + UUID.randomUUID();
-//
-//            // read the contact picture into the temp dir
-//            String picturePath = contactRepository.getContent(contact, tempFileName);
-//
-//            // verify that a path was returned
-//            assertThat(picturePath, not(isEmptyOrNullString()));
-//
-//            // get the retrieved picture
-//            Resource retrievedContactPicture = new FileSystemResource(picturePath);
-//
-//            // assert that the picture file was created and the content length is the same as the original
-//            assertThat(retrievedContactPicture, is(notNullValue()));
-//            assertThat(retrievedContactPicture.contentLength(), is(equalTo(contactPicture.contentLength())));
-//
-//        } finally {
-//
-//            // clean up the contact
-//            contactRepository.delete(createdContact);
-//
-//            // clean up the downloaded picture
-//            FileSystemUtils.deleteRecursively(tempDir.toFile());
-//        }
-//    }
+    @Test
+    public void setAndRetrieveContactPicture() throws Exception {
+
+        Contact contact = createTestContact();
+        Contact createdContact = null;
+        Path tempDir = null;
+
+        try {
+
+            // create a test contact
+            createdContact = contactRepository.save(contact);
+
+            // check the contact was created
+            assertThat(createdContact, is(notNullValue()));
+
+            // get the file extension
+            String fileExtension = StringUtils.getFilenameExtension(contactPicture.getFilename());
+
+            // set the contact picture
+            contactRepository.setContent(createdContact, fileExtension, contactPicture.getURL().getPath());
+
+            // create a temp dir to hold the picture
+            tempDir = Files.createTempDirectory(null);
+
+            // create a temp file name
+            String tempFileName = tempDir.toString() + File.separator + UUID.randomUUID();
+
+            // read the contact picture into the temp dir
+            String picturePath = contactRepository.getContent(contact, tempFileName);
+
+            // verify that a path was returned
+            assertThat(picturePath, not(isEmptyOrNullString()));
+
+            // get the retrieved picture
+            Resource retrievedContactPicture = new FileSystemResource(picturePath);
+
+            // assert that the picture file was created and the content length is the same as the original
+            assertThat(retrievedContactPicture, is(notNullValue()));
+            assertThat(retrievedContactPicture.contentLength(), is(equalTo(contactPicture.contentLength())));
+
+        } finally {
+
+            // clean up the contact
+            contactRepository.delete(createdContact);
+
+            // clean up the downloaded picture
+            FileSystemUtils.deleteRecursively(tempDir.toFile());
+        }
+    }
 }
