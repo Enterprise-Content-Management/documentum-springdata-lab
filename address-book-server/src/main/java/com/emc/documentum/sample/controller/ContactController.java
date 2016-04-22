@@ -1,15 +1,24 @@
 package com.emc.documentum.sample.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.UUID;
+
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.authentication.UserCredentials;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.util.FileSystemUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -150,7 +159,29 @@ public class ContactController {
     @ResponseStatus(HttpStatus.OK)
     public void setContactPicture(@PathVariable String id,
                                                 @RequestParam("file") MultipartFile file) throws Exception {
+        Path tempFile = null;
 
+        try {
+
+            // create a temp file to hold the picture
+            tempFile = Files.createTempFile(null, null);
+
+            // copy the picture to the temp file
+            file.transferTo(tempFile.toFile());
+
+            // get the contact
+            Contact contact = contactRepository.findOne(id);
+
+            // get the file extension
+            String fileExtension = StringUtils.getFilenameExtension(file.getOriginalFilename());
+
+            // set the picture as the contact content
+            contactRepository.setContent(contact, fileExtension, tempFile.toString());
+
+        } finally {
+            // clean up the temp file
+            FileSystemUtils.deleteRecursively(tempFile.toFile());
+        }
     }
 
     /**
@@ -163,7 +194,32 @@ public class ContactController {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public void getContactPicture(@PathVariable String id, HttpServletResponse response) throws Exception {
+    	
+    	Path tempDir = null;
 
+        try {
+
+            // create a temp dir to hold the picture
+            tempDir = Files.createTempDirectory(null);
+
+            // get the contact
+            Contact contact = contactRepository.findOne(id);
+
+            // create a temp file name
+            String tempFileName = tempDir.toString() + File.separator + UUID.randomUUID();
+
+            // read the contact picture into the temp dir
+            String picturePath = contactRepository.getContent(contact, tempFileName);
+
+            // copy the file content to the response output stream
+            FileInputStream fileInputStream = new FileInputStream(picturePath);
+            IOUtils.copy(fileInputStream, response.getOutputStream());
+            fileInputStream.close();
+
+        } finally {
+            // clean up the temp file and dir
+            FileSystemUtils.deleteRecursively(tempDir.toFile());
+        }
     }
 
     /*
