@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.sample.domain.Contact;
+import com.emc.documentum.sample.repositories.ContactRepository;
 import com.emc.documentum.springdata.core.Documentum;
 
 /**
@@ -47,6 +48,9 @@ public class ContactController {
 
     @Autowired
     private Documentum documentum;
+    
+    @Autowired
+    private ContactRepository contactRepository;
 
     @Autowired
     private ServletContext servletContext;
@@ -73,7 +77,7 @@ public class ContactController {
     public Iterable<Contact> getAllContacts(@RequestParam(value = "name", required = false) final String name,
                                             @RequestParam(value = "group", required = false) final String group) throws Exception {
 
-        Iterable<Contact> contacts = null;
+        Iterable<Contact> contacts = contactRepository.findAll();
 
         return contacts;
     }

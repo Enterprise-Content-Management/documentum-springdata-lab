@@ -235,48 +235,48 @@ public class ContactRepositoryTest {
      *
      * TODO: update with attribute value match check due to repeating attribute bug and revert
      */
-//    @Test
-//    public void findAllContacts() {
-//
-//        List<Contact> contacts = new ArrayList<Contact>();
-//
-//        try {
-//
-//            // create test contacts
-//            for(int i=0; i<100; i++) {
-//
-//                // create a test contact
-//                Contact createdContact = contactRepository.save(createTestContact());
-//
-//                // check the contact was created
-//                assertThat(createdContact, is(notNullValue()));
-//
-//                // store the contact
-//                contacts.add(createdContact);
-//            }
-//
-//            // find all contacts
-//            Iterable<Contact> contactIterator = contactRepository.findAll();
-//            assertThat(contactIterator, is(notNullValue()));
-//
-//            int size = 0;
-//
-//            // iterate through the contacts
-//            for (Contact contact : contactIterator) {
-//                size++;
-//            }
-//
-//            // check that the number of contacts found is at least as big as the number created for the test
-//            assertThat(size, is(greaterThanOrEqualTo(contacts.size())));
-//
-//        } finally {
-//
-//            // clean up the contacts
-//            for(Contact contact : contacts) {
-//                contactRepository.delete(contact);
-//            }
-//        }
-//    }
+    @Test
+    public void findAllContacts() {
+
+        List<Contact> contacts = new ArrayList<Contact>();
+
+        try {
+
+            // create test contacts
+            for(int i=0; i<100; i++) {
+
+                // create a test contact
+                Contact createdContact = contactRepository.save(createTestContact());
+
+                // check the contact was created
+                assertThat(createdContact, is(notNullValue()));
+
+                // store the contact
+                contacts.add(createdContact);
+            }
+
+            // find all contacts
+            Iterable<Contact> contactIterator = contactRepository.findAll();
+            assertThat(contactIterator, is(notNullValue()));
+
+            int size = 0;
+
+            // iterate through the contacts
+            for (Contact contact : contactIterator) {
+                size++;
+            }
+
+            // check that the number of contacts found is at least as big as the number created for the test
+            assertThat(size, is(greaterThanOrEqualTo(contacts.size())));
+
+        } finally {
+
+            // clean up the contacts
+            for(Contact contact : contacts) {
+                contactRepository.delete(contact);
+            }
+        }
+    }
 
     /**
      * Test to find a contact by part of its name
