@@ -52,21 +52,6 @@
     </dependencies>
 
     <repositories>
-        <!--<repository>-->
-            <!--<id>artifactory-dev</id>-->
-            <!--<url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/dev-snapshot-local</url>-->
-            <!--<snapshots>-->
-                <!--<updatePolicy>always</updatePolicy>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-
-        <!--<repository>-->
-            <!--<id>artifactory</id>-->
-            <!--<url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/internal</url>-->
-            <!--<snapshots>-->
-                <!--<updatePolicy>never</updatePolicy>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
 
         <repository>
             <id>com.emc.documentum.spring</id>
