@@ -1,6 +1,5 @@
 package com.emc.documentum.sample;
 
-import com.emc.documentum.springdata.repository.config.EnableDctmRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +18,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = {"com.emc.documentum.springdata", "com.emc.documentum.sample"})
 @EnableAutoConfiguration
-@EnableDctmRepositories
 @EnableWebMvc
 public class Application {
 

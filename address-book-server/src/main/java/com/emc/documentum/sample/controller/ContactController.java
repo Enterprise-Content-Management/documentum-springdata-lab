@@ -1,29 +1,28 @@
 package com.emc.documentum.sample.controller;
 
-import com.documentum.fc.common.DfException;
-import com.emc.documentum.sample.domain.Contact;
-import com.emc.documentum.sample.repositories.ContactRepository;
-import com.emc.documentum.springdata.core.Documentum;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+import javax.annotation.PostConstruct;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.authentication.UserCredentials;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.util.FileSystemUtils;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import java.io.File;
-import java.io.FileInputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.UUID;
+import com.documentum.fc.common.DfException;
+import com.emc.documentum.sample.domain.Contact;
+import com.emc.documentum.springdata.core.Documentum;
 
 /**
  * Controller class to expose the REST services for interacting with contact resources
@@ -48,9 +47,6 @@ public class ContactController {
 
     @Autowired
     private Documentum documentum;
-
-    @Autowired
-    private ContactRepository contactRepository;
 
     @Autowired
     private ServletContext servletContext;
@@ -79,19 +75,6 @@ public class ContactController {
 
         Iterable<Contact> contacts = null;
 
-        /*
-         * if the name URI param is supplied then only get contacts where the name contains the
-         * value in the URI param, else if the group URI param is supplied then only get contacts
-         * that are part of the group specified by the group URI param
-         */
-        if(StringUtils.hasText(name)) {
-            contacts = contactRepository.findByNameContaining(name);
-        } else if(StringUtils.hasText(group)) {
-            contacts = contactRepository.findByGroups(group);
-        } else {
-            contacts = contactRepository.findAll();
-        }
-
         return contacts;
     }
 
@@ -107,13 +90,7 @@ public class ContactController {
     @ResponseStatus(HttpStatus.CREATED)
     public Contact createContact(@RequestBody @Valid final Contact contact) throws Exception {
 
-        // make sure no ID is set so that new object is created
-        contact.setId(null);
-
-        // save the new contact
-        contactRepository.save(contact);
-
-        return contact;
+    	return null;
     }
 
     /**
@@ -127,8 +104,7 @@ public class ContactController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteContact(@PathVariable String id) throws Exception {
 
-        // delete the contact
-        contactRepository.delete(id);
+        
     }
 
     /**
@@ -144,11 +120,7 @@ public class ContactController {
     @ResponseStatus(HttpStatus.OK)
     public Contact updateContact(@PathVariable String id, @RequestBody @Valid final Contact contact) throws Exception {
 
-        // ensure the contact ID is correctly set
-        contact.setId(id);
-
-        // update the contact
-        return contactRepository.save(contact);
+    	return null;
     }
 
     /**
@@ -164,29 +136,6 @@ public class ContactController {
     public void setContactPicture(@PathVariable String id,
                                                 @RequestParam("file") MultipartFile file) throws Exception {
 
-        Path tempFile = null;
-
-        try {
-
-            // create a temp file to hold the picture
-            tempFile = Files.createTempFile(null, null);
-
-            // copy the picture to the temp file
-            file.transferTo(tempFile.toFile());
-
-            // get the contact
-            Contact contact = contactRepository.findOne(id);
-
-            // get the file extension
-            String fileExtension = StringUtils.getFilenameExtension(file.getOriginalFilename());
-
-            // set the picture as the contact content
-            contactRepository.setContent(contact, fileExtension, tempFile.toString());
-
-        } finally {
-            // clean up the temp file
-            FileSystemUtils.deleteRecursively(tempFile.toFile());
-        }
     }
 
     /**
@@ -200,31 +149,6 @@ public class ContactController {
     @ResponseStatus(HttpStatus.OK)
     public void getContactPicture(@PathVariable String id, HttpServletResponse response) throws Exception {
 
-        Path tempDir = null;
-
-        try {
-
-            // create a temp dir to hold the picture
-            tempDir = Files.createTempDirectory(null);
-
-            // get the contact
-            Contact contact = contactRepository.findOne(id);
-
-            // create a temp file name
-            String tempFileName = tempDir.toString() + File.separator + UUID.randomUUID();
-
-            // read the contact picture into the temp dir
-            String picturePath = contactRepository.getContent(contact, tempFileName);
-
-            // copy the file content to the response output stream
-            FileInputStream fileInputStream = new FileInputStream(picturePath);
-            IOUtils.copy(fileInputStream, response.getOutputStream());
-            fileInputStream.close();
-
-        } finally {
-            // clean up the temp file and dir
-            FileSystemUtils.deleteRecursively(tempDir.toFile());
-        }
     }
 
     /*
